@@ -1,3 +1,4 @@
+
 package com.analemma.table;
 
 import com.vaadin.data.util.BeanItemContainer;
@@ -14,6 +15,7 @@ public class PriceList extends CustomComponent {
 	private BeanItemContainer<Product> container;
 
 	public PriceList(BeanItemContainer<Product> container) {
+
 		this.container = container;
 		Table table = createTable();
 		table.setContainerDataSource(container);
@@ -25,9 +27,12 @@ public class PriceList extends CustomComponent {
 	}
 
 	private Button createAddProductButton() {
+
 		Button addProductButton = new Button("Add product");
 		addProductButton.addClickListener(new ClickListener() {
+
 			public void buttonClick(ClickEvent event) {
+
 				container.addItem(new Product("", 0));
 			}
 		});
@@ -35,16 +40,20 @@ public class PriceList extends CustomComponent {
 	}
 
 	private Table createTable() {
+
 		Table table = new Table();
 		table.setContainerDataSource(container);
 		table.setEditable(true);
 		table.addGeneratedColumn("Remove", new Table.ColumnGenerator() {
-			
-			public Object generateCell(Table source, final Object itemId,
-					Object columnId) {
+
+			public Object generateCell(
+				Table source, final Object itemId, Object columnId) {
+
 				Button removeButton = new Button("x");
 				removeButton.addClickListener(new ClickListener() {
+
 					public void buttonClick(ClickEvent event) {
+
 						container.removeItem(itemId);
 					}
 				});
