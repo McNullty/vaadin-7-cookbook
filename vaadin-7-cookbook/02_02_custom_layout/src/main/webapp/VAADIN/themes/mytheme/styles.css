@@ -1,0 +1,27 @@
+.header,.menu,.footer {
+	border: thin;
+	border-style: solid;
+	border-color: LightGrey;	
+}
+
+.header {
+	text-align: center;
+	font-size: 32px;
+	height: 75px;
+}
+
+.menu {
+	height: 300px;
+	width: 20%;
+	text-align: center;
+	float: left;
+}
+
+.content {
+	text-align: left;
+}
+
+.footer {
+	text-align: right;
+	clear: both;
+}
