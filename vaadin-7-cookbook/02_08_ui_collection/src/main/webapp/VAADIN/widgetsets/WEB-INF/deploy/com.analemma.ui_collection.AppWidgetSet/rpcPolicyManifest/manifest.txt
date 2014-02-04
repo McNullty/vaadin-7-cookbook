@@ -1,2 +1,0 @@
-# Module com.analemma.ui_collection.AppWidgetSet
-# RPC service class, partial path of RPC policy file
