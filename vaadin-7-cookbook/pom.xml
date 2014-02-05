@@ -30,6 +30,7 @@
     <module>03_02_table</module>
     <module>03_03_flot</module>
     <module>03_04_high_charts</module>
+    <module>03_05_drag_and_drop_uplad</module>
   </modules>
 
 	<dependencyManagement>
