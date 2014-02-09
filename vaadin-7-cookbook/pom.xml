@@ -39,6 +39,8 @@
 		<module>04_02_digits</module>
     <module>05_01_immediately</module>
     <module>05_02_edit_label</module>
+    <module>05_03_lazy_loading</module>
+    <module>05_04_reorder_table</module>
   </modules>
 
 	<dependencyManagement>
