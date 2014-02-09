@@ -42,6 +42,7 @@
     <module>05_03_lazy_loading</module>
     <module>05_04_reorder_table</module>
     <module>05_05_shortcuts</module>
+    <module>05_06_link</module>
   </modules>
 
 	<dependencyManagement>
