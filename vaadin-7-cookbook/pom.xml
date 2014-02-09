@@ -33,6 +33,7 @@
 		<module>03_05_drag_and_drop_upload</module>
     <module>03_07_joda_date_time</module>
     <module>03_08_slider_zooming</module>
+    <module>03_09_rich_text_area</module>
   </modules>
 
 	<dependencyManagement>

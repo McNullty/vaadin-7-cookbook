@@ -1,0 +1,23 @@
+@import "../reindeer/reindeer.scss";
+
+@mixin mytheme {
+  @include reindeer;
+
+
+  .my .gwt-RichTextToolbar-bottom {
+	  display: none;
+  }
+  
+  my .gwt-RichTextToolbar .gwt-ToggleButton[title="Toggle Subscript"],
+  .my .gwt-RichTextToolbar .gwt-ToggleButton[title="Toggle Superscript"],
+  .my .gwt-RichTextToolbar .gwt-ToggleButton[title="Toggle Strikethrough"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Indent Right"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Indent Left"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Insert Horizontal Rule"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Insert Image"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Create Link"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Remove Link"],
+  .my .gwt-RichTextToolbar .gwt-PushButton[title="Remove Formatting"]{
+	  display: none;
+  }
+}
