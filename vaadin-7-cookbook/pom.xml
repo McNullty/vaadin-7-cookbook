@@ -36,6 +36,7 @@
     <module>03_09_rich_text_area</module>
     <module>03_10_styling_css</module>
     <module>04_01_counter</module>
+    <module>04_02_digits</module>
   </modules>
 
 	<dependencyManagement>
