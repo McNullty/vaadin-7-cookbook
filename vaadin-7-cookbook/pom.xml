@@ -34,6 +34,7 @@
     <module>03_07_joda_date_time</module>
     <module>03_08_slider_zooming</module>
     <module>03_09_rich_text_area</module>
+    <module>03_10_styling_css</module>
   </modules>
 
 	<dependencyManagement>
