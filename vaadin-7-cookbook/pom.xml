@@ -43,6 +43,7 @@
     <module>05_04_reorder_table</module>
     <module>05_05_shortcuts</module>
     <module>05_06_link</module>
+    <module>05_07_context_menu</module>
   </modules>
 
 	<dependencyManagement>
