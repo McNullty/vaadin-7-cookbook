@@ -1,5 +1,5 @@
 
-package com.analemma.drag_and_drop_uplad;
+package com.analemma.drag_and_drop_upload;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.analemma</groupId>
@@ -27,11 +28,11 @@
 		<module>02_09_drag-and-drop</module>
 		<module>02_10_absolute_layout</module>
 		<module>03_01_list_select</module>
-    <module>03_02_table</module>
-    <module>03_03_flot</module>
-    <module>03_04_high_charts</module>
-    <module>03_05_drag_and_drop_uplad</module>
-  </modules>
+		<module>03_02_table</module>
+		<module>03_03_flot</module>
+		<module>03_04_high_charts</module>
+		<module>03_05_drag_and_drop_upload</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -121,51 +122,51 @@
 				</plugin>
 
 				<plugin>
-				<groupId>com.vaadin</groupId>
-				<artifactId>vaadin-maven-plugin</artifactId>
-				<version>${vaadin.plugin.version}</version>
-				<configuration>
-					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-					<!-- <runTarget>mobilemail</runTarget> -->
-					<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This 
-						way compatible with Vaadin eclipse plugin. -->
-					<webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets
-					</webappDirectory>
-					<hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
-					</hostedWebapp>
-					<noServer>true</noServer>
-					<!-- Remove draftCompile when project is ready -->
-					<draftCompile>false</draftCompile>
-					<compileReport>true</compileReport>
-					<style>OBF</style>
-					<strict>true</strict>
-					<runTarget>http://localhost:8080/</runTarget>
-				</configuration>
-				<executions>
-					<execution>
-						<configuration>
-							<!-- if you don't specify any modules, the plugin will find them -->
-							<!-- <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module> 
-								</modules> -->
-						</configuration>
-						<goals>
-							<goal>clean</goal>
-							<goal>resources</goal>
-							<goal>update-theme</goal>
-							<goal>update-widgetset</goal>
-							<goal>compile-theme</goal>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>com.vaadin</groupId>
-						<artifactId>vaadin-client-compiler</artifactId>
-						<version>${vaadin.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
+					<groupId>com.vaadin</groupId>
+					<artifactId>vaadin-maven-plugin</artifactId>
+					<version>${vaadin.plugin.version}</version>
+					<configuration>
+						<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+						<!-- <runTarget>mobilemail</runTarget> -->
+						<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This 
+							way compatible with Vaadin eclipse plugin. -->
+						<webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets
+						</webappDirectory>
+						<hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
+						</hostedWebapp>
+						<noServer>true</noServer>
+						<!-- Remove draftCompile when project is ready -->
+						<draftCompile>false</draftCompile>
+						<compileReport>true</compileReport>
+						<style>OBF</style>
+						<strict>true</strict>
+						<runTarget>http://localhost:8080/</runTarget>
+					</configuration>
+					<executions>
+						<execution>
+							<configuration>
+								<!-- if you don't specify any modules, the plugin will find them -->
+								<!-- <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module> 
+									</modules> -->
+							</configuration>
+							<goals>
+								<goal>clean</goal>
+								<goal>resources</goal>
+								<goal>update-theme</goal>
+								<goal>update-widgetset</goal>
+								<goal>compile-theme</goal>
+								<goal>compile</goal>
+							</goals>
+						</execution>
+					</executions>
+					<dependencies>
+						<dependency>
+							<groupId>com.vaadin</groupId>
+							<artifactId>vaadin-client-compiler</artifactId>
+							<version>${vaadin.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
 
 				<plugin>
 					<groupId>org.mortbay.jetty</groupId>
@@ -203,7 +204,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>

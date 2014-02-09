@@ -1,5 +1,5 @@
 
-package com.analemma.drag_and_drop_uplad;
+package com.analemma.drag_and_drop_upload;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -14,7 +14,7 @@ import com.vaadin.ui.UI;
 public class MyVaadinUI extends UI {
 
 	@WebServlet(value = "/*", asyncSupported = true)
-	@VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "com.analemma.drag_and_drop_uplad.AppWidgetSet")
+	@VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "com.analemma.drag_and_drop_upload.AppWidgetSet")
 	public static class Servlet extends VaadinServlet {
 	}
 

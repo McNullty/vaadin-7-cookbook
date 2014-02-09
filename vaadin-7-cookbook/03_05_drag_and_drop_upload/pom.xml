@@ -6,7 +6,7 @@
 		<artifactId>vaadin-7-cookbook</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>03_05_drag_and_drop_uplad</artifactId>
+	<artifactId>03_05_drag_and_drop_upload</artifactId>
 	<packaging>war</packaging>
 	<name>Drag And Drop Upload</name>
 
