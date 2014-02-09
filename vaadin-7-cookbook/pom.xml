@@ -35,6 +35,7 @@
     <module>03_08_slider_zooming</module>
     <module>03_09_rich_text_area</module>
     <module>03_10_styling_css</module>
+    <module>04_01_counter</module>
   </modules>
 
 	<dependencyManagement>
