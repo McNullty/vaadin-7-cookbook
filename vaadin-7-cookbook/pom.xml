@@ -46,6 +46,7 @@
 		<module>05_06_link</module>
 		<module>05_07_context_menu</module>
 		<module>05_08_message_menu_bar</module>
+		<module>05_09_noticeboard</module>
 	</modules>
 
 	<dependencyManagement>
