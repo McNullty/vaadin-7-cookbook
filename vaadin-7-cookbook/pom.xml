@@ -48,6 +48,7 @@
 		<module>05_08_message_menu_bar</module>
 		<module>05_09_noticeboard</module>
 		<module>06_01_validation_messages</module>
+		<module>06_02_system_messages</module>
 	</modules>
 
 	<dependencyManagement>
