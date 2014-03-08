@@ -49,6 +49,7 @@
 		<module>05_09_noticeboard</module>
 		<module>06_01_validation_messages</module>
 		<module>06_02_system_messages</module>
+		<module>06_03_popup_view</module>
 	</modules>
 
 	<dependencyManagement>
