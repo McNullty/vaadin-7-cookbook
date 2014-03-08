@@ -1,4 +1,4 @@
-package com.analemma.message.menu_bar;
+package com.analemma.message_menu_bar;
 
 import org.vaadin.artur.icepush.ICEPush;
 
