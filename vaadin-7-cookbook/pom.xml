@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.analemma</groupId>
@@ -37,14 +38,15 @@
 		<module>03_10_styling_css</module>
 		<module>04_01_counter</module>
 		<module>04_02_digits</module>
-    <module>05_01_immediately</module>
-    <module>05_02_edit_label</module>
-    <module>05_03_lazy_loading</module>
-    <module>05_04_reorder_table</module>
-    <module>05_05_shortcuts</module>
-    <module>05_06_link</module>
-    <module>05_07_context_menu</module>
-  </modules>
+		<module>05_01_immediately</module>
+		<module>05_02_edit_label</module>
+		<module>05_03_lazy_loading</module>
+		<module>05_04_reorder_table</module>
+		<module>05_05_shortcuts</module>
+		<module>05_06_link</module>
+		<module>05_07_context_menu</module>
+		<module>05_08_message_menu_bar</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -216,7 +218,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
