@@ -6,9 +6,9 @@
 		<artifactId>vaadin-7-cookbook</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>06_03_tray_notifications</artifactId>
+	<artifactId>06_05_confirmation_window</artifactId>
 	<packaging>war</packaging>
-	<name>Tray notifications</name>
+	<name>Confirmation Window</name>
 
 	<dependencies>
 		<dependency>
