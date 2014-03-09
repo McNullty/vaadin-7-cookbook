@@ -12,7 +12,7 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Notification;
-import com.vaadin.ui.ProgressIndicator;
+import com.vaadin.ui.ProgressBar;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Upload;
 import com.vaadin.ui.VerticalLayout;
@@ -34,7 +34,9 @@ public class MyVaadinUI extends UI {
     layout.setMargin(true);
     setContent(layout);
 
-    ProgressIndicator indicator = new ProgressIndicator(0.0f);
+    ProgressBar indicator = new ProgressBar(0.0f);
+    UI.getCurrent().setPollInterval(200);
+
     UploadReceiver uploadReceiver = new UploadReceiver(indicator);
     Upload upload = new Upload("Upload", uploadReceiver);
     upload.addProgressListener(uploadReceiver);
@@ -46,10 +48,9 @@ public class MyVaadinUI extends UI {
   class UploadReceiver implements Upload.Receiver, Upload.ProgressListener, Upload.StartedListener,
       Upload.FinishedListener {
 
-    //TODO: Naprviti verziju bez ProgressInidcatora
-    private final ProgressIndicator indicator;
+    private final ProgressBar indicator;
 
-    public UploadReceiver(ProgressIndicator indicator) {
+    public UploadReceiver(ProgressBar indicator) {
       this.indicator = indicator;
     }
 

@@ -22,11 +22,10 @@ public class MyVaadinUI extends UI {
   class PriceCalculation implements Runnable {
 
     private long calculated = 0;
-    //TODO: Ukloniti process indicator klasu
-    private final ProgressIndicator indicator;
+    private final ProgressBar indicator;
     private final Label label;
 
-    public PriceCalculation(ProgressIndicator indicator, Label label) {
+    public PriceCalculation(ProgressBar indicator, Label label) {
       this.indicator = indicator;
       this.label = label;
     }
@@ -61,10 +60,10 @@ public class MyVaadinUI extends UI {
 
   public class StartCalculationListener implements Button.ClickListener {
 
-    private final ProgressIndicator indicator;
+    private final ProgressBar indicator;
     private final Label label;
 
-    public StartCalculationListener(ProgressIndicator indicator, Label label) {
+    public StartCalculationListener(ProgressBar indicator, Label label) {
       this.indicator = indicator;
       this.label = label;
     }
@@ -83,7 +82,8 @@ public class MyVaadinUI extends UI {
     layout.setMargin(true);
     setContent(layout);
 
-    ProgressIndicator indicator = new ProgressIndicator();
+    ProgressBar indicator = new ProgressBar();
+    UI.getCurrent().setPollInterval(200);
     Label label = new Label();
 
     Button button = new Button("Start calculation");
