@@ -1,0 +1,9 @@
+@import "../reindeer/reindeer.scss";
+
+@include reindeer;
+
+.v-app .v-Notification.mynotification {
+	background-color: #C0C0C0;
+	color: #818181;
+	font-size: 75%;
+}

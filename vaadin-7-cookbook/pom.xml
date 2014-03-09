@@ -52,6 +52,7 @@
 		<module>06_03_popup_view</module>
 		<module>06_04_tray_notifications</module>
 		<module>06_05_confirmation_window</module>
+		<module>06_06_rich_tooltip</module>
 	</modules>
 
 	<dependencyManagement>
