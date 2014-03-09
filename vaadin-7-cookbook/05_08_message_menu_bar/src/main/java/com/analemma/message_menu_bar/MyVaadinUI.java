@@ -7,9 +7,9 @@ import org.vaadin.artur.icepush.ICEPushServlet;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 
+//TODO: Osposobiti ovaj projekt i napraviti pravi server side push
 @Theme("mytheme")
 @SuppressWarnings("serial")
 public class MyVaadinUI extends UI {
