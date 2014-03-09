@@ -53,6 +53,7 @@
 		<module>06_04_tray_notifications</module>
 		<module>06_05_confirmation_window</module>
 		<module>06_06_rich_tooltip</module>
+		<module>06_07_file_transfer_progressbar</module>
 	</modules>
 
 	<dependencyManagement>
