@@ -30,5 +30,7 @@
     <!-- <set-configuration-property name="devModeRedirectEnabled" value="true" /> -->
 
 
-    <inherits name="org.vaadin.peter.contextmenu.ContextmenuWidgetset" />
+    
+
+    <inherits name="com.github.wolfie.refresher.RefresherWidgetset" />
 </module>

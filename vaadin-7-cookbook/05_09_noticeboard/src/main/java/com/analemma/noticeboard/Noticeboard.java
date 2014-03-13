@@ -28,6 +28,7 @@ public class Noticeboard extends VerticalLayout {
 	private static int userCount;
 	private int userId;
 	private static int noteId = 1;
+	//TODO napraviti serverside push
 	private Refresher refresher = new Refresher();
 	private static final int UPDATE_INTERVAL = 2000;
 
