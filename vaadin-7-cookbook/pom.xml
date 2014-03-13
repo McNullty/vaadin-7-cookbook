@@ -56,6 +56,7 @@
 		<module>06_08_indeterminate_process</module>
     <module>06_09_browser_info</module>
     <module>07_01_simple_login</module>
+    <module>07_02_generate_fields</module>
   </modules>
 
 	<dependencyManagement>
