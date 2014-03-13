@@ -58,6 +58,7 @@
     <module>07_01_simple_login</module>
     <module>07_02_generate_fields</module>
     <module>07_03_bind_fields</module>
+    <module>07_04_field_validation</module>
   </modules>
 
 	<dependencyManagement>
