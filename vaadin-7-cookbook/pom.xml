@@ -60,6 +60,7 @@
     <module>07_03_bind_fields</module>
     <module>07_04_field_validation</module>
     <module>07_05_bean_validation</module>
+    <module>07_06_custom_validation</module>
   </modules>
 
 	<dependencyManagement>
