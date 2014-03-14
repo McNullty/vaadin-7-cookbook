@@ -62,6 +62,7 @@
     <module>07_05_bean_validation</module>
     <module>07_06_custom_validation</module>
     <module>07_07_crud_form</module>
+    <module>07_08_filtering_values</module>
   </modules>
 
 	<dependencyManagement>
