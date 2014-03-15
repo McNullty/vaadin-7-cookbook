@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.analemma</groupId>
@@ -54,16 +55,17 @@
 		<module>06_06_rich_tooltip</module>
 		<module>06_07_file_transfer_progressbar</module>
 		<module>06_08_indeterminate_process</module>
-    <module>06_09_browser_info</module>
-    <module>07_01_simple_login</module>
-    <module>07_02_generate_fields</module>
-    <module>07_03_bind_fields</module>
-    <module>07_04_field_validation</module>
-    <module>07_05_bean_validation</module>
-    <module>07_06_custom_validation</module>
-    <module>07_07_crud_form</module>
-    <module>07_08_filtering_values</module>
-  </modules>
+		<module>06_09_browser_info</module>
+		<module>07_01_simple_login</module>
+		<module>07_02_generate_fields</module>
+		<module>07_03_bind_fields</module>
+		<module>07_04_field_validation</module>
+		<module>07_05_bean_validation</module>
+		<module>07_06_custom_validation</module>
+		<module>07_07_crud_form</module>
+		<module>07_08_filtering_values</module>
+		<module>08_01_vaadin_with_spring</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -235,7 +237,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
