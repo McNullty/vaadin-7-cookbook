@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.analemma.vaadin_spring_security.bean.MyBean;
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -22,6 +23,7 @@ import com.vaadin.ui.UI;
 
 @Theme("mytheme")
 @SuppressWarnings("serial")
+@PreserveOnRefresh
 public class MyVaadinUI extends UI {
 
   @WebServlet(value = "/*", asyncSupported = true)
