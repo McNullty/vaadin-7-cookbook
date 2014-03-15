@@ -12,7 +12,7 @@
 	<name>List Select</name>
 
 	<properties>
-		<spring.version>3.1.2.RELEASE</spring.version>
+		<spring.version>4.0.2.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
