@@ -4,6 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -29,9 +31,13 @@ public class MyVaadinUI extends UI {
   }
 
   private ApplicationContext applicationContext;
+  
+  private static final Logger logger = LoggerFactory.getLogger(MyVaadinUI.class);
 
   @Override
   protected void init(VaadinRequest request) {
+    logger.info("Init started");
+    
     WrappedSession session = request.getWrappedSession();
     HttpSession httpSession = ((WrappedHttpSession) session).getHttpSession();
     ServletContext servletContext = httpSession.getServletContext();
