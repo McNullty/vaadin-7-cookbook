@@ -70,10 +70,6 @@
 		<module>08_04_vaadin_spring_database</module>
 		<module>08_05_vaadin_spring_internationalization</module>
 		<module>08_06_vaadin_spring_injector</module>
-		<module>08_07_vaadin_grails_internationalization</module>
-		<module>08_08_vaadin_grails_gorm</module>
-		<module>08_09_vaadin_grails_services</module>
-		<module>08_10_vaadin_grails_addon</module>
 	</modules>
 
 	<dependencyManagement>
