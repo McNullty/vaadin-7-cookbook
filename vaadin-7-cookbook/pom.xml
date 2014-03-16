@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.analemma</groupId>
@@ -70,7 +69,29 @@
 		<module>08_04_vaadin_spring_database</module>
 		<module>08_05_vaadin_spring_internationalization</module>
 		<module>08_06_vaadin_spring_injector</module>
-	</modules>
+    <module>09_01_property</module>
+    <module>09_02_items</module>
+    <module>09_03_container</module>
+    <module>09_04_crud_2</module>
+    <module>09_05_filtering</module>
+    <module>09_06_converters</module>
+    <module>09_07_cookies</module>
+    <module>10_01_vaadin_building_core</module>
+    <module>10_02_03_04_vaadin_mvp</module>
+    <module>10_05_improving_app_startup_time</module>
+    <module>10_06_vaadin_avoid_sluggish_ui_table</module>
+    <module>10_07_vaadin_avoid_sluggish_ui_table_paged</module>
+    <module>10_08_vaadin_seo</module>
+    <module>11_01_vaadin_tdd_junit</module>
+    <module>11_02_vaadin_mocking</module>
+    <module>11_03_vaadin_junit_table</module>
+    <module>11_04_vaadin_testbench</module>
+    <module>11_06_vaadin_maven_autoreloading</module>
+    <module>11_07_vaadin_production_mode</module>
+    <module>12_01_magic_trick</module>
+    <module>12_02_read_it</module>
+    <module>12_03_goodbye_world</module>
+  </modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -242,7 +263,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore />
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
