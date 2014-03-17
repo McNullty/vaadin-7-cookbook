@@ -19,7 +19,9 @@ public class TabsURL extends TabSheet {
   private static final String tabNames[] =
       {"Home", "Contractors", "Customers", "Employees", "Help"};
   private static final String LAST_TAB_COOKIE_NAME = "vaadin_last_tab_name";
-  private static final String PATH = "/data";
+
+  // VAZNO! PATH varijabla mora odgovarati kontekstu aplikacije
+  private static final String PATH = "/09_07_cookies";
 
   public TabsURL() {
     createTabs(tabNames);
@@ -59,7 +61,6 @@ public class TabsURL extends TabSheet {
     }
     setSelectedTab(0);
   }
-
 
   private void setLastTabNameToCookies(final String tabName) {
     final Cookie lastTabCookie = new Cookie(LAST_TAB_COOKIE_NAME, tabName);
