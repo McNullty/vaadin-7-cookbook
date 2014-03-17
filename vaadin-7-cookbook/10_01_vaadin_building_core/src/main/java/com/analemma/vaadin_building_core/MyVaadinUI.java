@@ -12,12 +12,25 @@ import com.vaadin.ui.UI;
 @SuppressWarnings("serial")
 public class MyVaadinUI extends UI {
 
-    @WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "com.analemma.vaadin_building_core.AppWidgetSet")
-    public static class Servlet extends VaadinServlet {
-    }
+  @WebServlet(value = "/*", asyncSupported = true)
+  @VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class,
+      widgetset = "com.analemma.vaadin_building_core.AppWidgetSet")
+  public static class Servlet extends VaadinServlet {
+  }
 
-    @Override
-    public void init(VaadinRequest request) {
-    }
+  private PageLayout pageLayout;
+
+  @Override
+  protected void init(final VaadinRequest request) {
+    pageLayout = new PageLayout();
+    setContent(pageLayout);
+  }
+
+  public PageLayout getPageLayout() {
+    return pageLayout;
+  }
+
+  public static MyVaadinUI getCurrent() {
+    return (MyVaadinUI) UI.getCurrent();
+  }
 }

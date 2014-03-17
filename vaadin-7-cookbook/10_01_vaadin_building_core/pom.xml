@@ -7,9 +7,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>10_01_vaadin_building_core</artifactId>
-	<groupId>com.analemma</groupId>
 	<packaging>war</packaging>
-	<name>List Select</name>
+	<name>Vaadin Building core</name>
 
 	<dependencies>
 		<dependency>
