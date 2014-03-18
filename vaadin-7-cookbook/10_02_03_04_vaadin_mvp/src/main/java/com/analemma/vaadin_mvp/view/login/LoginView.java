@@ -17,4 +17,6 @@ public interface LoginView extends View {
   Button getBtnLogin();
 
   void afterSuccessfulLogin();
+
+  void afterFailedLogin();
 }

@@ -66,4 +66,9 @@ public class LoginViewImpl extends VerticalLayout implements LoginView {
   public void afterSuccessfulLogin() {
     UI.getCurrent().getNavigator().navigateTo("tags");
   }
+
+  @Override
+  public void afterFailedLogin() {
+    UI.getCurrent().getNavigator().navigateTo("");
+  }
 }

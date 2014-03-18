@@ -24,13 +24,16 @@ public class LoginPresenter implements LoginViewHandler {
     final String username = txtUsername.getValue();
     final String password = txtPassword.getValue();
 
-    try {
-      service.login(username, password);
+    if ("".equals(username) || "".equals(username)) {
+      view.afterFailedLogin();
+    } else {
+      try {
+        service.login(username, password);
 
-      view.afterSuccessfulLogin();
-    } catch (final ServiceException e) {
-      // TODO: log exception
-      // TODO: notify view about failure
+        view.afterSuccessfulLogin();
+      } catch (final ServiceException e) {
+        view.afterFailedLogin();
+      }
     }
   }
 }
