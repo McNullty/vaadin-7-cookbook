@@ -2,10 +2,14 @@ package com.analemma.vaadin_mvp.view;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.analemma.vaadin_mvp.model.tag.TagServiceDummy;
 import com.analemma.vaadin_mvp.model.user.UserServiceImpl;
 import com.analemma.vaadin_mvp.presenter.login.LoginPresenter;
+import com.analemma.vaadin_mvp.presenter.tag.TagPresenter;
 import com.analemma.vaadin_mvp.view.login.LoginView;
 import com.analemma.vaadin_mvp.view.login.impl.LoginViewImpl;
+import com.analemma.vaadin_mvp.view.tag.TagView;
+import com.analemma.vaadin_mvp.view.tag.impl.TagViewImpl;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
@@ -26,6 +30,17 @@ public class MyVaadinUI extends UI {
   @Override
   protected void init(final VaadinRequest request) {
     final Navigator navigator = new Navigator(this, this);
+
+    final TagView view = new TagViewImpl();
+    view.init();
+
+    final TagPresenter handler = new TagPresenter(view, new TagServiceDummy());
+    view.setHandler(handler);
+
+    view.getNewTagLayout().init();
+    view.getTagListLayout().init();
+
+    navigator.addView("tags", view);
 
     final LoginView loginView = new LoginViewImpl();
     final LoginPresenter loginPresenter = new LoginPresenter(loginView, new UserServiceImpl());
