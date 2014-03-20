@@ -7,9 +7,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>10_06_vaadin_avoid_sluggish_ui_table</artifactId>
-	<groupId>com.analemma</groupId>
 	<packaging>war</packaging>
-	<name>List Select</name>
+	<name>Avoiding sluggish UI table</name>
 
 	<dependencies>
 		<dependency>
