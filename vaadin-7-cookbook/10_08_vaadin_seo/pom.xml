@@ -7,9 +7,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>10_08_vaadin_seo</artifactId>
-	<groupId>com.analemma</groupId>
 	<packaging>war</packaging>
-	<name>List Select</name>
+	<name>Vaading SEO</name>
 
 	<dependencies>
 		<dependency>
