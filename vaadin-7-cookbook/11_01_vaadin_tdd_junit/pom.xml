@@ -7,9 +7,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>11_01_vaadin_tdd_junit</artifactId>
-	<groupId>com.analemma</groupId>
 	<packaging>war</packaging>
-	<name>List Select</name>
+	<name>TDD JUnit</name>
 
 	<dependencies>
 		<dependency>
@@ -38,6 +37,11 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
 	</dependencies>
 
 	<build>
