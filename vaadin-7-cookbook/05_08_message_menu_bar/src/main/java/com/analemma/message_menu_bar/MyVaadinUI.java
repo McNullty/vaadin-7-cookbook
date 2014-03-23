@@ -10,7 +10,6 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.communication.PushMode;
 import com.vaadin.ui.UI;
 
-// TODO: Osposobiti ovaj projekt i napraviti pravi server side push
 @Theme("mytheme")
 @SuppressWarnings("serial")
 @Push(value = PushMode.MANUAL)
