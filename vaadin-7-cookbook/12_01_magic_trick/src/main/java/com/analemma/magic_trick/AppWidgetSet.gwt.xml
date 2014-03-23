@@ -29,4 +29,8 @@
     -->
     <!-- <set-configuration-property name="devModeRedirectEnabled" value="true" /> -->
 
+
+    <inherits name="org.vaadin.artur.playingcards.PlayingCardsWidgetset" />
+
+    <inherits name="com.github.wolfie.refresher.RefresherWidgetset" />
 </module>
