@@ -7,9 +7,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>11_07_vaadin_production_mode</artifactId>
-	<groupId>com.analemma</groupId>
 	<packaging>war</packaging>
-	<name>List Select</name>
+	<name>Production mode</name>
 
 	<dependencies>
 		<dependency>
