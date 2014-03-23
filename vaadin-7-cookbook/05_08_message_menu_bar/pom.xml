@@ -38,17 +38,6 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.vaadin.addons</groupId>
-			<artifactId>icepush</artifactId>
-			<version>0.5.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.icepush</groupId>
-			<artifactId>icepush</artifactId>
-			<version>3.3.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
