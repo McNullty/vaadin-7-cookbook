@@ -2,6 +2,7 @@ package com.analemma.noticeboard;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -10,6 +11,7 @@ import com.vaadin.ui.UI;
 
 @Theme("mytheme")
 @SuppressWarnings("serial")
+@Push
 public class MyVaadinUI extends UI {
 
   @WebServlet(value = "/*", asyncSupported = true)
@@ -19,7 +21,7 @@ public class MyVaadinUI extends UI {
   }
 
   @Override
-  public void init(VaadinRequest request) {
+  public void init(final VaadinRequest request) {
     setContent(new Noticeboard());
   }
 }

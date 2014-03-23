@@ -3,7 +3,6 @@ package com.analemma.noticeboard;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.wolfie.refresher.Refresher;
 import com.vaadin.event.FieldEvents.BlurEvent;
 import com.vaadin.event.FieldEvents.BlurListener;
 import com.vaadin.event.FieldEvents.FocusEvent;
@@ -23,170 +22,174 @@ import com.vaadin.ui.Window;
 
 @SuppressWarnings("serial")
 public class Noticeboard extends VerticalLayout {
-	private static List<Note> notes = new ArrayList<>();
-	private List<Window> windows = new ArrayList<>();
-	private static int userCount;
-	private int userId;
-	private static int noteId = 1;
-	//TODO napraviti serverside push
-	private Refresher refresher = new Refresher();
-	private static final int UPDATE_INTERVAL = 2000;
+  private static List<Note> notes = new ArrayList<>();
+  private final List<Window> windows = new ArrayList<>();
+  private static int userCount;
+  private final int userId;
+  private static int noteId = 1;
 
-	public Noticeboard() {
-		refresher.setRefreshInterval(UPDATE_INTERVAL);
-		userId = userCount++;
-		setSpacing(true);
-		setMargin(true);
-		addComponent(new Label("Logged as an User " + userId));
-		Button addNoteButton = new Button("Add note");
+  private static final int UPDATE_INTERVAL = 2000;
 
-		addNoteButton.addClickListener(new ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				Note note = new Note(noteId++);
-				notes.add(note);
-				Window window = createWindow(note);
-				windows.add(window);
-				UI.getCurrent().addWindow(window);
-			}
-		});
+  public Noticeboard() {
+    userId = userCount++;
+    setSpacing(true);
+    setMargin(true);
+    addComponent(new Label("Logged as an User " + userId));
+    final Button addNoteButton = new Button("Add note");
 
-		addComponent(addNoteButton);
-		addExtension(refresher);
-		new NoticeboardUpdater().start();
-	}
+    addNoteButton.addClickListener(new ClickListener() {
+      @Override
+      public void buttonClick(final ClickEvent event) {
+        final Note note = new Note(noteId++);
+        notes.add(note);
+        final Window window = createWindow(note);
+        windows.add(window);
+        UI.getCurrent().addWindow(window);
+      }
+    });
 
-	private Window createWindow(final Note note) {
-		final Window window = new Window(note.getCaption());
-		Layout layout = new VerticalLayout();
-		layout.addComponent(createContentNote(note, window));
-		window.setContent(layout);
-		window.setResizable(false);
-		window.setPositionX(note.getPositionX());
-		window.setPositionY(note.getPositionY());
-		window.setData(note);
-		window.addBlurListener(createBlurListener(window));
-		window.addFocusListener(createFocusListener(window));
-		return window;
-	}
+    addComponent(addNoteButton);
+    new NoticeboardUpdater().start();
+  }
 
-	private TextArea createContentNote(final Note note, final Window window) {
-		TextArea contentNote = new TextArea();
-		contentNote.setSizeFull();
-		contentNote.setValue(note.getText());
-		contentNote.setImmediate(true);
-		contentNote.setTextChangeEventMode(TextChangeEventMode.EAGER);
-		contentNote.addBlurListener(createBlurListener(window));
-		contentNote.addFocusListener(createFocusListener(window));
-		contentNote.addTextChangeListener(new TextChangeListener() {
-			@Override
-			public void textChange(TextChangeEvent event) {
-				note.setText(event.getText());
-			}
-		});
-		return contentNote;
-	}
+  private Window createWindow(final Note note) {
+    final Window window = new Window(note.getCaption());
+    final Layout layout = new VerticalLayout();
+    layout.addComponent(createContentNote(note, window));
+    window.setContent(layout);
+    window.setResizable(false);
+    window.setPositionX(note.getPositionX());
+    window.setPositionY(note.getPositionY());
+    window.setData(note);
+    window.addBlurListener(createBlurListener(window));
+    window.addFocusListener(createFocusListener(window));
+    return window;
+  }
 
-	private BlurListener createBlurListener(final Window window) {
-		return new BlurListener() {
-			@Override
-			public void blur(BlurEvent event) {
-				unlockNote(window);
-			}
-		};
-	}
+  private TextArea createContentNote(final Note note, final Window window) {
+    final TextArea contentNote = new TextArea();
+    contentNote.setSizeFull();
+    contentNote.setValue(note.getText());
+    contentNote.setImmediate(true);
+    contentNote.setTextChangeEventMode(TextChangeEventMode.EAGER);
+    contentNote.addBlurListener(createBlurListener(window));
+    contentNote.addFocusListener(createFocusListener(window));
+    contentNote.addTextChangeListener(new TextChangeListener() {
+      @Override
+      public void textChange(final TextChangeEvent event) {
+        note.setText(event.getText());
+      }
+    });
+    return contentNote;
+  }
 
-	private FocusListener createFocusListener(final Window window) {
-		return new FocusListener() {
-			@Override
-			public void focus(FocusEvent event) {
-				lockNote(window);
-			}
-		};
-	}
+  private BlurListener createBlurListener(final Window window) {
+    return new BlurListener() {
+      @Override
+      public void blur(final BlurEvent event) {
+        unlockNote(window);
+      }
+    };
+  }
 
-	private void lockNote(Window window) {
-		Note note = (Note) window.getData();
-		note.setLockedByUser(userId);		
-		String caption = "LOCKED by User " + userId;
-		note.setCaption(caption);
-		window.setCaption(caption);
-	}
+  private FocusListener createFocusListener(final Window window) {
+    return new FocusListener() {
+      @Override
+      public void focus(final FocusEvent event) {
+        lockNote(window);
+      }
+    };
+  }
 
-	private void unlockNote(Window window) {		
-		Note note = (Note) window.getData();
-		note.setLockedByUser(-1);
-		note.setPositionX(window.getPositionX());
-		note.setPositionY(window.getPositionY());
-		note.setCaption("Note " + note.getId());
-		window.setCaption("Note " + note.getId());
-	}
+  private void lockNote(final Window window) {
+    final Note note = (Note) window.getData();
+    note.setLockedByUser(userId);
+    final String caption = "LOCKED by User " + userId;
+    note.setCaption(caption);
+    window.setCaption(caption);
+  }
 
-	private void updateNoticeboard() {
-		for (Note note : notes) {
-			Window window = getWindow(note);
-			updateTextArea(window, note);
+  private void unlockNote(final Window window) {
+    final Note note = (Note) window.getData();
+    note.setLockedByUser(-1);
+    note.setPositionX(window.getPositionX());
+    note.setPositionY(window.getPositionY());
+    note.setCaption("Note " + note.getId());
+    window.setCaption("Note " + note.getId());
+  }
 
-			if (window == null) {
-				window = createWindow(note);
-				windows.add(window);
-				UI.getCurrent().addWindow(window);
-			}
+  private void updateNoticeboard() {
+    for (final Note note : notes) {
+      Window window = getWindow(note);
+      updateTextArea(window, note);
 
-			if (note.getLockedByUser() > -1 && note.getLockedByUser() != userId) {
-				window.setEnabled(false);
-			} else {
-				window.setEnabled(true);
-			}
-			
-			if (note.getLockedByUser() == userId) {
-				Note focusedNote = (Note) window.getData();
-				focusedNote.setPositionX(window.getPositionX());
-				focusedNote.setPositionY(window.getPositionY());
-				focusedNote.setCaption(window.getCaption());
-			} else {
-				window.setPositionX(note.getPositionX());
-				window.setPositionY(note.getPositionY());
-				window.setCaption(note.getCaption());
-			}
-		}
-	}
+      if (window == null) {
+        window = createWindow(note);
+        windows.add(window);
+        UI.getCurrent().addWindow(window);
+      }
 
-	private void updateTextArea(Window window, Note note) {
-		if (window == null)
-			return;
-		Layout layout = (Layout) window.getContent();
-		TextArea area = (TextArea) layout.iterator().next();
-		area.setValue(note.getText());
-	}
+      if (note.getLockedByUser() > -1 && note.getLockedByUser() != userId) {
+        window.setEnabled(false);
+      } else {
+        window.setEnabled(true);
+      }
 
-	private Window getWindow(Note note) {
-		for (Window window : windows) {
-			if (window.getData().equals(note)) {
-				return window;
-			}
-		}
-		return null;
-	}
+      if (note.getLockedByUser() == userId) {
+        final Note focusedNote = (Note) window.getData();
+        focusedNote.setPositionX(window.getPositionX());
+        focusedNote.setPositionY(window.getPositionY());
+        focusedNote.setCaption(window.getCaption());
+      } else {
+        window.setPositionX(note.getPositionX());
+        window.setPositionY(note.getPositionY());
+        window.setCaption(note.getCaption());
+      }
+    }
+  }
 
-	public class NoticeboardUpdater extends Thread {
-		@Override
-		public void run() {
-			while (true) {
-				try {
-					Thread.sleep(UPDATE_INTERVAL);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+  private void updateTextArea(final Window window, final Note note) {
+    if (window == null) {
+      return;
+    }
+    final Layout layout = (Layout) window.getContent();
+    final TextArea area = (TextArea) layout.iterator().next();
+    area.setValue(note.getText());
+  }
 
-				getUI().getSession().getLockInstance().lock();
-				try {
-					updateNoticeboard();					
-				} finally {
-					getUI().getSession().getLockInstance().unlock();
-				}
-			}
-		}
-	}
+  private Window getWindow(final Note note) {
+    for (final Window window : windows) {
+      if (window.getData().equals(note)) {
+        return window;
+      }
+    }
+    return null;
+  }
+
+  public class NoticeboardUpdater extends Thread {
+    @Override
+    public void run() {
+      while (true) {
+        try {
+          Thread.sleep(UPDATE_INTERVAL);
+        } catch (final InterruptedException e) {
+          e.printStackTrace();
+        }
+
+        // getUI().getSession().getLockInstance().lock();
+        try {
+          getUI().access(new Runnable() {
+
+            @Override
+            public void run() {
+              updateNoticeboard();
+            }
+          });
+        } finally {
+          // getUI().getSession().getLockInstance().unlock();
+        }
+      }
+    }
+  }
 
 }
